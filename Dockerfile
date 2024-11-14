@@ -5,7 +5,8 @@ LABEL version="0.8.8" \
     docker_build="docker build -t blackarch/wordlistctl:0.8.8 ." \
     docker_run_basic="docker run --rm blackarch/wordlistctl:0.8.8 -h"
 
-COPY [".", "/wordlistctl"]
+WORKDIR /wordlistctl
+COPY [".", "."]
 
 ENV PATH=${PATH}:/wordlistctl
 
